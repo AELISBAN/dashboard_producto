@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARELUX - Tienda de Componentes Electrónicos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-microchip"></i>
+                <h1>JARELUX</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>Componentes Electrónicos de Calidad</h2>
+            <p>Encuentra los mejores componentes electrónicos para tus proyectos. Más de 30 productos disponibles con garantía y envío rápido.</p>
+            <button class="cta-button">Ver Productos</button>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-circuit-board"></i>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard">
+        <div class="container">
+            <h2 class="section-title">Dashboard de Ventas</h2>
+            
+            <!-- Métricas Principales -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="metric-content">
+                        <h3>Productos Disponibles</h3>
+                        <p class="metric-value">32</p>
+                        <span class="metric-change positive">+3 este mes</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="metric-content">
+                        <h3>Ventas del Mes</h3>
+                        <p class="metric-value">$2,450</p>
+                        <span class="metric-change positive">+12% vs mes anterior</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="metric-content">
+                        <h3>Órdenes Procesadas</h3>
+                        <p class="metric-value">28</p>
+                        <span class="metric-change positive">+5 este mes</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="metric-content">
+                        <h3>Clientes Activos</h3>
+                        <p class="metric-value">45</p>
+                        <span class="metric-change positive">+3 este mes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráficas -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Ventas por Mes</h3>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                
+                <div class="chart-card">
+                    <h3>Productos Más Vendidos</h3>
+                    <canvas id="topProductsChart"></canvas>
+                </div>
+                
+                <div class="chart-card">
+                    <h3>Distribución de Categorías</h3>
+                    <canvas id="categoriesChart"></canvas>
+                </div>
+                
+                <div class="chart-card">
+                    <h3>Precios de Productos</h3>
+                    <canvas id="pricesChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section id="productos" class="products">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            
+            <!-- Filtros -->
+            <div class="filters">
+                <button class="filter-btn active" data-category="todos">Todos</button>
+                <button class="filter-btn" data-category="microcontroladores">Microcontroladores</button>
+                <button class="filter-btn" data-category="sensores">Sensores</button>
+                <button class="filter-btn" data-category="actuadores">Actuadores</button>
+                <button class="filter-btn" data-category="herramientas">Herramientas</button>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JARELUX</h3>
+                    <p>Tu tienda de confianza para componentes electrónicos de alta calidad.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="#">Microcontroladores</a></li>
+                        <li><a href="#">Sensores</a></li>
+                        <li><a href="#">Actuadores</a></li>
+                        <li><a href="#">Herramientas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Garantía</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@jarelux.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Ciudad</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 JARELUX. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
